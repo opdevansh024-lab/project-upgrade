@@ -1,0 +1,11 @@
+# Local secrets and generated files
+.env
+.env.*
+!.env.example
+supabase-config.js
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
+.vscode/
+

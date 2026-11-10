@@ -1,24 +1,25 @@
-# FORGE Gym App Demo
+# FORGE Gym App
 
-A self-contained, responsive fitness app prototype built with HTML, CSS, and JavaScript. No build step or dependencies are required.
+A responsive fitness app demo with working local interactions and an optional Supabase account/cloud-sync layer.
 
-## Run
+## Run locally
 
-Open `index.html` in a browser, or open this folder in Visual Studio Code and use the Live Server extension.
+Serve this folder over HTTP (for example, VS Code Live Server or `npx serve .`) and open `index.html`. Cloud auth uses ES modules, so opening the file directly with `file://` is not supported. Without backend configuration, the demo continues to save to this browser’s local storage.
 
-## Features
+## Enable accounts and cloud save
 
-- Dashboard with daily activity, recovery, workout, and nutrition summaries
-- Workout plan and guided workout player with set tracking, rest timer, and completion progress
-- Global training style library with search and working category filters
-- Nutrition tracker with food search, sample macros, meal logging, hydration, simulated barcode scan, and editable goals
-- Swipe-style human trainer discovery plus a 24/7 AI coach preview
-- Bottom-right chat widget with sample replies and quick prompts
-- Community challenges, worldwide leaderboard preview, gym schedule, class booking, and membership preview
-- Local browser storage for nutrition logs, goals, challenge membership, check-in, trainer saves, and workout progress
-- Tab and card animations, with reduced-motion support
+1. Create a Supabase project.
+2. In the Supabase SQL Editor, run [`supabase/schema.sql`](supabase/schema.sql). The table uses Row Level Security so each signed-in user can access only their own JSON state.
+3. Edit `supabase-config.example.js` and fill in the project URL and publishable (or legacy anon) key from the project API settings.
+4. Serve the folder over HTTP and use **Sign in** to create an account or sign in. Email confirmation may be required by the project’s Auth settings.
 
-## Demo limitations
+Only the public publishable/anon key belongs in browser configuration. Never put a service-role key or AI provider key in frontend files.
 
-Data is sample/demo data stored in local browser storage. The AI coach replies, barcode scan, trainer connections, gym booking, membership, and leaderboard are previews; they are not connected to live services or user accounts.
+## What syncs
+
+The app’s existing demo state (nutrition totals and goals, workout counts, challenge/booking flags, and saved trainers) syncs as one per-user document. The first sync uses the current browser state when the account has no cloud row. An existing cloud row is loaded on sign-in and replaces this browser’s local demo state.
+
+## Current limits
+
+The coach chat, food scanner, leaderboard, gym classes, trainer discovery, and memberships are demo experiences. Chat is not connected to a live AI service. Wearable imports, real payments, live community data, admin tools, and production deployment still need their own server-side integrations and credentials. No provider secrets are stored in this frontend.
 

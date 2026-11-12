@@ -27,5 +27,5 @@ The app’s existing demo state (nutrition totals and goals, workout counts, cha
 
 ## Current limits
 
-The coach chat, food scanner, leaderboard, gym classes, trainer discovery, and memberships are demo experiences. Chat is not connected to a live AI service. Wearable imports, real payments, live community data, admin tools, and production deployment still need their own server-side integrations and credentials. No provider secrets are stored in this frontend.
+Workout catalog, buddy profiles, leaderboards, trainers, and gym classes use sample data. Coach chat and training analysis are scripted/rule-based previews, not live AI. Meal-photo upload only previews a selected image and logs a sample meal; it does not identify food. Steps, sleep, and activity are manually entered; wearable sync is not connected. The symptom checker is not a medical assessment or diagnosis. Nutrition values are estimates, not medical advice. Live global rankings, real user matching, food recognition, AI services, wearable imports, payments, and production deployment need backend services, credentials, and privacy/security review. No provider secrets are stored in this frontend.
 

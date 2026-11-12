@@ -15,6 +15,12 @@ Serve this folder over HTTP (for example, VS Code Live Server or `npx serve .`) 
 
 Only the public publishable/anon key belongs in browser configuration. Never put a service-role key or AI provider key in frontend files.
 
+## Features
+
+- Forest-green and warm-mist visual theme across the responsive app screens.
+- Guided workouts, food and hydration logging, trainer discovery, challenges, and class schedule demo flows.
+- Personal record tracking, bodyweight and mood check-ins, and guided-workout history saved in local browser storage.
+
 ## What syncs
 
 The app’s existing demo state (nutrition totals and goals, workout counts, challenge/booking flags, and saved trainers) syncs as one per-user document. The first sync uses the current browser state when the account has no cloud row. An existing cloud row is loaded on sign-in and replaces this browser’s local demo state.

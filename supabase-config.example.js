@@ -1,8 +1,8 @@
-// Copy this file to supabase-config.js and fill in the public project values.
-// Use only the Supabase project URL and publishable/anon key here.
-// Never place a service_role key or an AI provider secret in browser code.
-window.FORGE_SUPABASE_CONFIG = {
+// Copy this file to supabase-config.js and replace both placeholders.
+// The publishable/anon key is safe for browser use only when Row Level Security is enabled.
+// Never put an OpenAI key, Supabase secret key, or service_role key in this file.
+window.FORGE_CONFIG = {
   url: "https://YOUR_PROJECT.supabase.co",
-  publishableKey: "YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY"
+  anonKey: "YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY"
 };
 

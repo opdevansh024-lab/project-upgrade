@@ -1,0 +1,3 @@
+[functions.forge-ai]
+verify_jwt = true
+

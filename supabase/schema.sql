@@ -5,7 +5,6 @@ create table if not exists public.fitness_state (
 );
 
 alter table public.fitness_state enable row level security;
-
 revoke all on table public.fitness_state from anon;
 grant select, insert, update, delete on table public.fitness_state to authenticated;
 
